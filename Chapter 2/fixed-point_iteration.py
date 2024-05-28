@@ -7,6 +7,8 @@ def fixed_point(p0, max_iter : int, tol : float) -> float:
     i = 0
     while (i < max_iter):
         p = g(p0)
+        print(p0, end = ' ')
+        print(p)
         if (abs(p - p0) < tol):
             print("Found the solution: ", end = "")
             print(p, end = " ")
