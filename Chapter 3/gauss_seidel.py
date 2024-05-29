@@ -5,7 +5,7 @@ def row_swap(A: np.array, org: int, tar: int):
     A[org] = A[tar]
     A[tar] = temp
 
-def jacobi(A: np.array, b: np.array, x0: np.array, max_iter: int, tol : float):
+def gauss_seidel(A: np.array, b: np.array, x0: np.array, max_iter: int, tol : float):
     iter = 0
     n = x0.shape[0]
     x = np.zeros(n)
