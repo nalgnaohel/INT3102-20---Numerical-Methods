@@ -43,6 +43,6 @@ def gauss_seidel(A: np.array, b: np.array, x0: np.array, max_iter: int, tol : fl
 A = np.array([[4, -1, 0], [-1, 4, -1], [0, -1, 4]])
 b = np.array([1, 1, 1])
 x0 = np.zeros(A.shape[0])
-jacobi(A, b, x0, 150, 1e-6)
+gauss_seidel(A, b, x0, 150, 1e-6)
 # [0.35714275 0.42857137 0.35714284]
 # print(A)
