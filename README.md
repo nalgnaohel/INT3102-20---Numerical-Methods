@@ -1,3 +1,1 @@
-INT3120 20 - Numerical Methods
-
-My code for this subject.
+My code for INT3120 20 - Numerical Methods course.
