@@ -43,8 +43,8 @@ def spline_eval(x, y, x_estimate, diff_x0, diff_xn):
 
     return np.inf
 
-# Example data points
+# Ex 13
 x = np.array([0, 1, 2, 3])
-y = np.array([np.exp(i) for i in x])
+y = np.array([1, 0, -1, 0])
 
-print(spline_eval(x, y, 2.5, 0, np.exp(3)))
+print(spline_eval(x, y, 2.5, 0, -6))

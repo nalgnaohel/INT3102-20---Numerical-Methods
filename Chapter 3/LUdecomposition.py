@@ -6,11 +6,11 @@ def LU_solve(A : np.array, b : np.array):
     x = lu_solve((lu, piv), b)
     return x
 
-
-A = np.array([[4, -1, 0], [-1, 4, -1], [0, -1, 4]])
-b = np.array([1, 1, 1])
+print("Exercise 3:")
+A = np.array([[5, 4, 1], [10, 9, 4], [10, 13, 15]])
+b = np.array([6.8, 17.6, 38.4])
 #x0 = np.zeros(A.shape[0])
 x = LU_solve(A, b)
 print(x)
 print(np.allclose(np.matmul(A, x) - b, np.zeros(A.shape[0])))
-#[0.35714286 0.42857143 0.35714286]
+#[0.4 0.8 1.6]

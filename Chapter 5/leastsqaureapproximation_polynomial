@@ -1,0 +1,70 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def least_squares_polynomial_fit(x, y, degree):
+    A = np.vander(x, degree + 1)
+    
+    coeffs = np.linalg.lstsq(A, y, rcond=None)[0]
+    
+    p = np.poly1d(coeffs[::-1])
+    print(p)
+    return p
+
+def plot(x, y, x_fit, y_fit, title):
+    plt.scatter(x, y, label='Data points')
+    plt.plot(x_fit, y_fit, 'r-', label=f'Polynomial fit, degree {degree}')
+    plt.legend()
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title(f'Least Squares Polynomial Fit, {title}')
+    plt.grid(True)
+    plt.show()
+
+degree = 2
+#Ex 3a
+x = np.linspace(0, 1, 100)
+y = x ** 2 + 3 * x + 2
+polynomial = least_squares_polynomial_fit(x, y, degree)
+x_fit = np.linspace(0, 1, 100)
+y_fit = polynomial(x_fit)
+plot(x, y, x_fit, y_fit, "a")
+
+#Ex 3b
+x = np.linspace(0, 2, 100)
+y = x ** 3
+polynomial = least_squares_polynomial_fit(x, y, degree)
+x_fit = x
+y_fit = polynomial(x_fit)
+plot(x, y, x_fit, y_fit, "b")
+
+#Ex 3c
+x = np.linspace(1, 3, 100)
+y = 1 / x
+polynomial = least_squares_polynomial_fit(x, y, degree)
+x_fit = x
+y_fit = polynomial(x_fit)
+plot(x, y, x_fit, y_fit, "c")
+
+#Ex 3d
+x = np.linspace(0, 2, 100)
+y = np.exp(x)
+polynomial = least_squares_polynomial_fit(x, y, degree)
+x_fit = x
+y_fit = polynomial(x_fit)
+plot(x, y, x_fit, y_fit, "d")
+
+#Ex 3e
+x = np.linspace(0, 1, 100)
+y = 0.5 * np.cos(x) + (1/3) * np.sin(2 * x)
+polynomial = least_squares_polynomial_fit(x, y, degree)
+x_fit = x
+y_fit = polynomial(x_fit)
+plot(x, y, x_fit, y_fit, "e")
+
+#Ex 3f
+x = np.linspace(1, 3, 100)
+y = x * np.log(x)
+polynomial = least_squares_polynomial_fit(x, y, degree)
+x_fit = x
+y_fit = polynomial(x_fit)
+plot(x, y, x_fit, y_fit, "f")

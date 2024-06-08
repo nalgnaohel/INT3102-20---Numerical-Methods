@@ -1,7 +1,7 @@
 import numpy as np
 
 def f(x: float) -> float:
-    return x - np.cos(x)
+    return x ** 2 - 6
 
 def false_position(p0 : float, p1 : float, max_iter : int, tol: float):
     i = 1
@@ -26,4 +26,7 @@ def false_position(p0 : float, p1 : float, max_iter : int, tol: float):
     print(max_iter, end=" ")
     print("iterations.")
 
-false_position(0.8, 1, 10, 0.001)
+#Exercise 3
+print("Exercise 3b:")
+print(false_position(3, 2, 3, 10 ** (-5)))
+#2.44444444444444

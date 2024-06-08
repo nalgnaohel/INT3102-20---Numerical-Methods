@@ -1,7 +1,7 @@
 import numpy as np
 
 def f(x: float) -> float:
-    return x - np.cos(x)
+    return x ** 2 - 6
 
 def secant(p0 : float, p1 : float, max_iter : int, tol: float):
     i = 1
@@ -16,9 +16,12 @@ def secant(p0 : float, p1 : float, max_iter : int, tol: float):
             return
         p0 = p1
         p1 = p
+        print(p0, " ", p1, " ", p)
         i += 1
     print("Failed to find the solution after ", end="")
     print(max_iter, end="")
     print("iterations.")
 
-secant(0, 0.5, 10, 0.0001)
+print("Exercise 3a:")
+secant(3, 2, 3, 0.00001)
+#2.4545454545454546

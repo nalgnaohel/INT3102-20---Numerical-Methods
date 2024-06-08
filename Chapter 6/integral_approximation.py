@@ -1,7 +1,7 @@
 import numpy as np
 
 def f(x):
-    return 2 * x
+    return np.cos(x) ** 2
 
 def trapezoidal_rule(f, a, b, n):
     h = (b - a) / n
@@ -44,10 +44,10 @@ def simpsons_rule(f, a, b, n):
     
     return integral
 
-a = 0  
-b = 9
+a = 0.5  
+b = 1
 n = 1000 
-
+#x^4
 result = trapezoidal_rule(f, a, b, n)
 print("Trapezoidal Rule Approximated value of the integral:", result)
 result = midpoint_rule(f, a, b, n)
@@ -55,3 +55,20 @@ print("Midpoint Rule Approximated value of the integral:", result)
 result = simpsons_rule(f, a, b, n)
 print("Simpson Rule Approximated value of the integral:", result)
 
+#2 / (x - 4)
+a, b  = 0,  0.5
+result = trapezoidal_rule(f, a, b, n)
+print("Trapezoidal Rule Approximated value of the integral:", result)
+result = midpoint_rule(f, a, b, n)
+print("Midpoint Rule Approximated value of the integral:", result)
+result = simpsons_rule(f, a, b, n)
+print("Simpson Rule Approximated value of the integral:", result)
+
+#(cosx)^2
+a, b  = -0.25,  0.25
+result = trapezoidal_rule(f, a, b, n)
+print("Trapezoidal Rule Approximated value of the integral:", result)
+result = midpoint_rule(f, a, b, n)
+print("Midpoint Rule Approximated value of the integral:", result)
+result = simpsons_rule(f, a, b, n)
+print("Simpson Rule Approximated value of the integral:", result)
